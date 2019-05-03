@@ -1,4 +1,4 @@
-Aqui vem um .json com o "secret"
+Aqui vem um auth.json com o "secret"
 
 {
     "secret": "hash MD5 gerado"
