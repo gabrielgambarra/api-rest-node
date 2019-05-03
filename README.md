@@ -7,4 +7,6 @@ npm run dev para iniciar a aplicação.
 # Requisitos
 
 - Node.js
-- Mongo DB
+- Mongo DB (iniciar serviço antes da aplicação)
+
+Recomendação de Software para requisão HTTP: Insomnia.
