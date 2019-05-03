@@ -1,0 +1,5 @@
+Aqui vem um .json com o "secret"
+
+{
+    "secret": "hash MD5 gerado"
+}
