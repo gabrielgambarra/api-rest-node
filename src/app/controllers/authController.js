@@ -69,13 +69,13 @@ router.post('/forgot_password', async (req, res) => {
 
         const token = crypto.randomBytes(20).toString('hex');
 
-        const now = Date();
+        const now = new Date();
         now.setHours(now.getHours() + 1);
 
         await User.findByIdAndUpdate(user.id, {
             '$set': {
                 passwordResetToken: token,
-                passwordResetExpires: now
+                passwordResetExpires: now,
             }
         });
 
@@ -92,7 +92,38 @@ router.post('/forgot_password', async (req, res) => {
             return res.send();
         })
     } catch (err) {
-        console.log(err);
+        res.status(400).send({ error: 'Error on forgot password, try again' });
+    }
+});
+
+router.post('/reset_password', async (req, res) => {
+    const { email, token, password } = req.body;
+
+    try {
+        const user = await User.findOne({ email })
+        .select('+passwordResetToken passwordResetExpires');
+
+        if (!user) {
+            return res.status(400).send({ error: 'User not found' });
+        }
+
+        if (token !== user.passwordResetToken) {
+            return res.status(400).send({ error: 'Token invalid' });
+        }
+
+        const now = new Date().now;
+
+        if (now > user.passwordResetExpires) {
+            return res.status(400).send({ error: 'Token expired, generete a new one' });
+        }
+
+        user.password = password;
+
+        await user.save();
+
+        res.send();
+
+    } catch (err) {
         res.status(400).send({ error: 'Error on forgot password, try again' });
     }
 });
