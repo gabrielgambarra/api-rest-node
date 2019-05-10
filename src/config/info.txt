@@ -3,3 +3,12 @@ Aqui vem um auth.json com o "secret"
 {
     "secret": "hash MD5 gerado"
 }
+
+Aqui vem um mail.json com a configuração do servidor de SMTP
+
+{
+    "host": "ENDEREÇO SMTP",
+    "port": PORTA,
+    "user": "USUÁRIO",
+    "pass": "SENHA"
+}
