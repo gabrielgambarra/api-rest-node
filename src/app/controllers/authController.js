@@ -85,7 +85,7 @@ router.post('/forgot_password', async (req, res) => {
 
         mailer.sendMail({
             to: email,
-            from: 'gambarragabriel@gmail.com',
+            from: 'gambarragabrie1@gmail.com',
             template: 'auth/forgot_password',
             context: { token },
         }, (err) => {
