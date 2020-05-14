@@ -1,0 +1,33 @@
+<div fxLayout="row" fxLayoutAlign="space-between" class="table-title">
+    <h2>{{title}}</h2>
+
+    <p (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+    </p>
+</div>
+
+<table>
+    <tr>
+        <th>#</th>
+        <th *ngIf="type != 'patients'">Doctor</th>
+        <th *ngIf="type != 'doctors'">Patient</th>
+        <th *ngIf="type == 'schedules'">Date</th>
+    </tr>
+    <tr *ngFor="let item of items; let i = index">
+        <td>{{ i + 1 }}</td>
+
+        <!-- Doctor Column -->
+        <td *ngIf="type != 'patients'">
+            {{ getDoctorName(item) }}
+        </td>
+
+        <!-- Patient Column -->
+        <td *ngIf="type != 'doctors'">
+            {{ getPatientName(item) }}
+        </td>
+
+        <td *ngIf="type == 'schedules'">
+            {{ item.date | date: 'd/MM/yyyy' }}
+        </td>
+    </tr>
+</table>

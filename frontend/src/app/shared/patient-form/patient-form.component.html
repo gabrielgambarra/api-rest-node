@@ -1,0 +1,16 @@
+<div class="container-inputs">
+    <h3>Create patient</h3>
+    
+    <form #patientForm="ngForm" fxLayout="column">
+    
+        <div fxLayout="column">
+            <label for="patient">Patient*</label>
+            <input type="text" [(ngModel)]="patient.name" name="patient" id="patient" required>
+        </div>
+    
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button type="submit" [disabled]="!patientForm.valid" [class.disabled]="!patientForm.valid"
+                (click)="save(patient)">Save</button>
+        </div>
+    </form>
+</div>

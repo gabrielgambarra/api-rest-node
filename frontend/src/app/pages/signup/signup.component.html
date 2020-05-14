@@ -1,0 +1,33 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="container-signup">
+    <div fxLayout="column" class="box-signup">
+
+        <div class="container-inputs">
+
+            <h3>Sign up</h3>
+
+            <form #signupForm="ngForm" fxLayout="column">
+                <label for="name">Name*</label>
+                <input type="name" [(ngModel)]="signup.name" name="name" id="name" required>
+
+                <label for="email">Email*</label>
+                <input type="email" [(ngModel)]="signup.email" name="email" id="email" required>
+
+                <label for="password">Password*</label>
+                <input type="password" [(ngModel)]="signup.password" name="password" id="password" required>
+
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <button type="submit" [disabled]="!signupForm.valid" [class.disabled]="!signupForm.valid"
+                        (click)="signupAndLogin(signup)">Sign up!</button>
+                </div>
+            </form>
+
+        </div>
+
+        <hr>
+
+        <div fxLayout="row" class="signup-link">
+            <small>Do you have an account? <a [routerLink]="['/pages/login']">Log in!</a></small>
+        </div>
+
+    </div>
+</div>

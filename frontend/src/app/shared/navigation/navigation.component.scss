@@ -1,0 +1,75 @@
+@import "src/colors.scss";
+nav {
+    height: 8vh;
+    background: $primary;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        background: $primary;
+        height: 8vh;
+        max-width: 50%;
+        justify-content: space-evenly;
+        align-items: center;
+
+        li {
+            float: left;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 5px 0;
+                border-bottom: 2px solid transparent;
+                transition: border-bottom 0.2s;
+
+                &.active-link {
+                    border-bottom: 2px solid $accent;
+                }
+
+                &:hover,
+                &acvite {
+                    border-bottom: 2px solid $accent;
+                }
+            }
+        }
+    }
+
+    .logout-link {
+        display: flex;
+        list-style: none;
+        background: $primary;
+        height: 8vh;
+        width: 50%;
+        justify-content: space-evenly;
+        align-items: center;
+        float: right;
+
+        li {
+            a {
+                cursor: pointer;
+                color: #fff;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 5px 0;
+                border-bottom: 2px solid transparent;
+                transition: border-bottom 0.2s;
+
+                &:hover,
+                &acvite {
+                    border-bottom: 2px solid $accent;
+                }
+            }
+        }
+    }
+}
+
+.container {
+    display: flex;
+    padding-top: 6vh;
+    justify-content: center;
+    height: 92vh;
+    overflow-y: auto;
+}

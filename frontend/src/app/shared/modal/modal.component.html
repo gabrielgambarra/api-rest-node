@@ -1,0 +1,12 @@
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button" (click)="onNoClick()">×</span>
+
+        <app-doctor-form *ngIf="isDoctorScreen" (onSaveDoctor)="onSave($event)"></app-doctor-form>
+
+        <app-patient-form *ngIf="isPatientScreen" (onSavePatient)="onSave($event)"></app-patient-form>
+
+        <app-shecule-form *ngIf="isScheduleScreen" (onSaveScheduling)="onSave($event)"></app-shecule-form>
+
+    </div>
+</div>

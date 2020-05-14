@@ -1,0 +1,32 @@
+<div class="container-inputs">
+    <h3>Create scheduling</h3>
+    
+    <form #schedulingForm="ngForm" fxLayout="column">
+    
+        <div fxLayout="column">
+            <label for="doctor">Doctor*</label>
+            <!-- <input type="text" [(ngModel)]="scheduling.doctor" name="doctor" id="doctor" required> -->
+            <select name="doctors" id="doctors" [(ngModel)]="scheduling.doctor">
+                <option [ngValue]="doctor" *ngFor="let doctor of doctors">{{ doctor.name }}</option>
+            </select>
+        </div>
+
+        <div fxLayout="column">
+            <label for="patient">Patient*</label>
+            <!-- <input type="text" [(ngModel)]="scheduling.patient" name="patient" id="patient" required> -->
+            <select name="patients" id="patients" [(ngModel)]="scheduling.patient">
+                <option [ngValue]="patient" *ngFor="let patient of patients">{{ patient.name }}</option>
+            </select>
+        </div>
+
+        <div fxLayout="column">
+            <label for="date">Date*</label>
+            <input type="date" [(ngModel)]="scheduling.date" name="date" id="date" required>
+        </div>
+    
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button type="submit" [disabled]="!schedulingForm.valid" [class.disabled]="!schedulingForm.valid"
+                (click)="save(scheduling)">Save</button>
+        </div>
+    </form>
+</div>

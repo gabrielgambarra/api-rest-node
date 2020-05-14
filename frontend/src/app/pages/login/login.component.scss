@@ -1,0 +1,93 @@
+@import '../../../colors.scss';
+
+.container-login {
+    height: 100vh;
+
+    .box-login {
+        width: 30%;
+        background-color: #fff;
+        padding: 4vh 5vh;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .container-inputs {
+        padding-bottom: 2vh;
+        width: 100%;
+
+        h3 {
+            padding-bottom: 3vh;
+            font-weight: 300;
+        }
+
+        label {
+            font-size: 80%;
+        }
+        
+        input {
+            padding: 1vh;
+            margin: 1vh 0;
+            border-radius: 5px;
+            border: 1px solid $divider;
+            transition: box-shadow 0.3s, border-width 0.3s;
+
+            &:hover,
+            &:focus {
+                box-shadow: 2px 4px 6px 0 rgba(140, 140, 140, 0.5);
+            }
+        }
+
+        button {
+            border: none;
+            color: #FFF;
+            background-color: $dark_primary;
+            height: 4vh;
+            width: 7vw;        
+            border-radius: 5px;
+            font-size: 70%;
+            transition: box-shadow 0.3s;
+            cursor: pointer;
+            margin-top: 2vh;
+
+            &:hover {
+                box-shadow: 2px 4px 6px 0 rgba(140, 140, 140, 0.5);
+            }
+
+            &:active {
+                box-shadow: none;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+            }
+        }
+    }
+
+    hr {
+        color: $divider;
+        width: 100%;
+        margin: 1vh 0;
+    }
+
+    .signup-link {
+        margin-top: 1vh;
+
+        small {
+            font-size: 60%;
+        }
+
+        a { 
+            &:link,
+            &:visited {
+                text-decoration: none;
+                color: $primary;
+                border-bottom: 1px solid transparent;
+                transition: border-bottom 0.2s;
+            }
+
+            &:hover,
+            &:active {
+                border-bottom: 1px solid $primary;
+            }
+        }
+    }
+}

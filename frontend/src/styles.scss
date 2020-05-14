@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/colors.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+html,
+body {
+    background-color: $background;
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    color: $primary_text;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h2 {
+    word-spacing: 2px;
+    text-align: start;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+* {
+    scrollbar-color: #c3c3c3 rgba(12, 12, 12, 0.1);
+    scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+    border-radius: 10px;
+    background: rgba(12, 12, 12, 0.1);
+    border: 0;
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(12, 12, 12, 0.02);
+    border: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #aeaeae;
+    border: 0;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #8f8f8f;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background: #8f8f8f;
+}
+
+.disabled {
+    background-color: #b5b4b1 !important;
+    box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.25) !important;
+    color: #6a6a69 !important;
+}
+
+.centralized {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.container-inputs {
+    padding-bottom: 2vh;
+    width: 100%;
+
+    h3 {
+        padding-bottom: 3vh;
+        font-weight: 300;
+    }
+
+    label {
+        font-size: 80%;
+    }
+
+    input {
+        padding: 1vh;
+        margin: 1vh 0;
+        border-radius: 5px;
+        border: 1px solid $divider;
+        transition: box-shadow 0.3s, border-width 0.3s;
+
+        &:hover,
+        &:focus {
+            box-shadow: 2px 4px 6px 0 rgba(140, 140, 140, 0.5);
+        }
+    }
+
+    select {
+        padding: 1vh;
+        font-size: 15px;
+    }
+
+    button {
+        border: none;
+        color: #fff;
+        background-color: $dark_primary;
+        height: 4vh;
+        width: 7vw;
+        border-radius: 5px;
+        font-size: 70%;
+        transition: box-shadow 0.3s;
+        cursor: pointer;
+        margin-top: 2vh;
+
+        &:hover {
+            box-shadow: 2px 4px 6px 0 rgba(140, 140, 140, 0.5);
+        }
+
+        &:active {
+            box-shadow: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    }
+}

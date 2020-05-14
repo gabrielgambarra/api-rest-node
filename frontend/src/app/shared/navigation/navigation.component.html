@@ -1,0 +1,17 @@
+<nav>
+    <ul class="logout-link">
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li><a (click)="logout()">Logout</a></li>
+    </ul>
+    <ul class="nav-links">
+        <li><a routerLink="/home" routerLinkActive="active-link">Schedules</a></li>
+        <li><a routerLink="/doctors" routerLinkActive="active-link">Doctors</a></li>
+        <li><a routerLink="/patients" routerLinkActive="active-link">Patients</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
